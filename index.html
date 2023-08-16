@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene background="color:white">
+
+    <a-camera position="0 8 15"></a-camera>
+
+    <!-------------------------------------------Asset Management------------------------------------------->
+    <a-assets timeout="10000">
+
+      <img id="bg" src="./project148Assets-main/project148Assets-main/background.jpg">
+      <a-asset-item id='bench' src='./project148Assets-main/project148Assets-main/bench/scene.gltf'></a-asset-item>
+      <a-asset-item id="cat" src="./project148Assets-main/project148Assets-main/cat/scene.gltf"></a-asset-item>
+      <a-asset-item id="girl" src="./project148Assets-main/project148Assets-main/girl/scene.gltf"></a-asset-item>
+      <a-asset-item id="lamp" src="project148Assets-main/project148Assets-main/lamp/scene.gltf"></a-asset-item>
+      <a-asset-item id="street" src="project148Assets-main/project148Assets-main/street/scene.gltf"></a-asset-item>
+      <a-asset-item id="streetLamp" src="project148Assets-main/project148Assets-main/streetLamp/scene.gltf"></a-asset-item>
+    </a-assets>
+
+    <a-sky color="#2a281e"></a-sky>
+
+    <!-------------------------------------Lights in the scene----------------------------------------------->
+
+    <!--Ambient-->
+    <a-entity light="type: ambient; intensity: 0.5;">
+    </a-entity>
+
+
+    <!--Point-->
+    <a-entity>
+
+      <a-entity light="type: point; castShadow: true; color: #e6ca14; intensity: 2.35"
+      position="-5.92951 8.39487 1.29438"></a-entity>
+
+    </a-entity>
+    
+    <!-------------------------------------Circular Plane----------------------------------------------->
+
+    <a-circle shadow="receive:true" position="-0.4 -0.76 -25" rotation="-90 0 0" radius="100" shadow="receive: true" visible="true"
+      color="#2E6F10">
+    </a-circle>
+
+    <!--------------------------------------GLTF Models----------------------------------------------------------->
+    
+
+    <!-- BG scene -->
+    <a-box id="bg-scene"  
+    src="https://raw.githubusercontent.com/whitehatjr/PRO-VR-C148/main/assets/background.jpg"    
+    position="0 12.48 -3.5"
+    width="30"
+    height="25"></a-box>
+
+    <!-- Street -->
+    <a-entity shadow="cast:true;">
+      <a-entity id="street" 
+      scale="0.02 0.04 0.03"
+      position="0 0 -1"
+      rotation="0 90 0"></a-entity>
+    </a-entity>
+
+    <!-- Bench -->
+    <a-entity
+    gltf-model="#bench"
+    scale="1.5 1.5 1.5"
+    position="0 0 3"
+    shadow="cast:true"
+    ></a-entity>
+
+    <!--StreetLamp-->
+    <a-entity 
+    gtlf-model="#streetLamp"
+    scale="0.5 0.5 0.4"
+    position="-6 0 0"
+    shadow="cast:true"
+    >
+      
+    </a-entity>
+
+    <!-- Cat -->
+    <a-entity
+    gltf-model="#cat"
+    scale="0.03 0.03 0.03"
+    position="3.3947 1.62993 2.9347"
+    rotation="0 40 0"
+    shadow="cast:true"
+    >
+    </a-entity>
+
+    <!-- Girl -->
+    <a-entity
+    scale="0.003 0.003 0.003"
+    gltf-model="#girl"
+    position="-2 0.4 3"
+    shadow="cast:true;"
+  ></a-entity>
+
+    <!--------------------------------------END----------------------------------------------------------->
+  </a-scene>
+</body>
+
+</html>
